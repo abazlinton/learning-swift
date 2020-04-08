@@ -19,8 +19,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // This is provided for overriding, but not compulsory
     // -> false if the app cannot handle the URL resource or continue a user activity, otherwise return true
     // setting to false still seems to run the app though
+    // didFinishLaunchingWithOptions would be the label used when this is invoked, which we don't see here
+    // but presumably here application(application, didFinishLaunchingWithOptions: [...])
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        NSLog("yo \(launchOptions.debugDescription)")
+        var test = [UIApplication.LaunchOptionsKey: Any]()
+        let blah = UIApplication.LaunchOptionsKey(rawValue: "What")
+        test[blah] = 89
         return true
     }
 
